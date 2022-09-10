@@ -9,6 +9,9 @@ import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NewpatientComponent } from './views/patients/newpatient/newpatient.component';
 import { EditpatientComponent } from './views/patients/editpatient/editpatient.component';
+import { ConfirmateaccountComponent } from './views/confirmateaccount/confirmateaccount.component';
+import { NewcarerComponent } from './views/carer/newcarer/newcarer.component';
+import { EditcarerComponent } from './views/carer/editcarer/editcarer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { EditpatientComponent } from './views/patients/editpatient/editpatient.c
     LoginComponent,
     DashboardComponent,
     NewpatientComponent,
-    EditpatientComponent
+    EditpatientComponent,
+    ConfirmateaccountComponent,
+    NewcarerComponent,
+    EditcarerComponent
   ],
   imports: [
     BrowserModule,
