@@ -1,52 +1,70 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api/api.service';
 import { CarerI } from '../../models/carer.interface';
-import { ViewChild } from '@angular/core'
-
+import { ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  loginForm = new FormGroup({
+    //Conecto los componentes html con el login.component
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  });
 
-  loginForm = new FormGroup(
+  constructor(private apiService: ApiService, private router: Router) {}
+
+  //Capturar valor de un componente específico del html
+  carers: CarerI[] = [];
+  @ViewChild('emailElement') emailElement: ElementRef | undefined;
+  @ViewChild('passwordElement') passwordElement: ElementRef | undefined;
+  flat:boolean = false;
+
+  ngOnInit(): void {
+    this.checkLocalStorage();
+  }
+
+  //Verifica si no hay un usuario autenticado en el sistema
+  checkLocalStorage()
+  {
+    if(localStorage.getItem('emailVerification'))
     {
-      email : new FormControl('', Validators.required),
-      password : new FormControl('', Validators.required)
+      this.router.navigate(['dashboard']);
     }
-  )
-
-
-  constructor(private apiService:ApiService)
-  {
 
   }
 
-  carers:CarerI[] = [];
-  @ViewChild('emailElement') emailElement:ElementRef | undefined;
-  @ViewChild('passwordElement') passwordElement:ElementRef | undefined;
-
-  ngOnInit(): void
+  //Método para loguearse
+  onLogin(form: any)
   {
-
-  }
-
-  onLogin(form:any)
-  {
-    this.apiService.loginCarer().subscribe(data =>
+    //Hago uso del servicio para listar todos los carer por medio de la petición GET
+    this.apiService.loginCarer().subscribe((data) => {
+      //Asigno los carer a un arreglo carers para luego recorrerlo y comparar
+      this.carers = data;
+      for (let carer of data)
       {
-        this.carers = data;
-        for (let carer of data)
+        if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password && carer.state == true)
         {
-          if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password)
-          {
-            console.log("si es normal");
-          }
+          localStorage.setItem("emailVerification", carer.email);
+          this.router.navigate(['dashboard']);
         }
-      });
+        if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password && carer.state == false)
+        {
+          localStorage.setItem("emailVerification", carer.email);
+          this.router.navigate(['confirmateaccount']);
+        }
+        if(this.emailElement?.nativeElement.value != carer.email || this.passwordElement?.nativeElement.value != carer.password)
+        {
+          //Bandera para que se active mensaje de contraseña o usuario incorrecto en el login
+          this.flat = true;
+          console.log('Verifique su usuario o contraseña');
+        }
+      }
+    });
   }
-
 }

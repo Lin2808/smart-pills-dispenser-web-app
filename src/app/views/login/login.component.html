@@ -19,11 +19,14 @@
       <input #passwordElement type="password" id="password" class="fadeIn third" placeholder="password" formControlName="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
+    <div class="alert alert-danger" role="alert" *ngIf="flat">
+      <p>Email or password invalid. Try again</p>
+    </div>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <p>You don't have an account?</p>
-      <a class="underlineHover" href="#">Register</a>
+      <a class="underlineHover" [routerLink]="'/newcarer'">Register</a>
     </div>
   </div>
 </div>

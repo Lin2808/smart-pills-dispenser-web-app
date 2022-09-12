@@ -20,4 +20,10 @@ export class ApiService {
     let uri = this.url + 'carer';
     return this.httpClient.get<CarerI[]>(uri);
   }
+
+  registerCarer():Observable<CarerI[]>
+  {
+    let uri = this.url + 'carer';
+    return this.httpClient.get<CarerI[]>(uri);
+  }
 }
