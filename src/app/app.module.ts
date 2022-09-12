@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ElementRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { EditpatientComponent } from './views/patients/editpatient/editpatient.c
 import { ConfirmateaccountComponent } from './views/confirmateaccount/confirmateaccount.component';
 import { NewcarerComponent } from './views/carer/newcarer/newcarer.component';
 import { EditcarerComponent } from './views/carer/editcarer/editcarer.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { EditcarerComponent } from './views/carer/editcarer/editcarer.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
