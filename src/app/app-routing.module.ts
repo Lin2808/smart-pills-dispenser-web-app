@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 import { EditcarerComponent } from './views/carer/editcarer/editcarer.component';
 import { NewcarerComponent } from './views/carer/newcarer/newcarer.component';
 import { ConfirmateaccountComponent } from './views/confirmateaccount/confirmateaccount.component';

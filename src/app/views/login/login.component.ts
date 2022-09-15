@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   //Verifica si no hay un usuario autenticado en el sistema
   checkLocalStorage()
   {
-    if(localStorage.getItem('emailVerification'))
+    if(localStorage.getItem('email'))
     {
       this.router.navigate(['dashboard']);
     }
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       {
         if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password && carer.state == true)
         {
-          localStorage.setItem("emailVerification", carer.email);
+          localStorage.setItem("email", carer.email);
           this.router.navigate(['dashboard']);
         }
         if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password && carer.state == false)

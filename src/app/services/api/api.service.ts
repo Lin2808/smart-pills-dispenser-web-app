@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CarerI } from '../../models/carer.interface';
-import { ResponseI } from '../../models/response.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
