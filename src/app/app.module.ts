@@ -13,7 +13,8 @@ import { ConfirmateaccountComponent } from './views/confirmateaccount/confirmate
 import { NewcarerComponent } from './views/carer/newcarer/newcarer.component';
 import { EditcarerComponent } from './views/carer/editcarer/editcarer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ListpatientComponent } from './views/patients/listpatient/listpatient.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http'
     EditpatientComponent,
     ConfirmateaccountComponent,
     NewcarerComponent,
-    EditcarerComponent
+    EditcarerComponent,
+    ListpatientComponent
   ],
   imports: [
     BrowserModule,
