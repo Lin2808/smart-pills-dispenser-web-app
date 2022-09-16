@@ -1,34 +1,30 @@
 <app-header></app-header>
+
 <div class="container">
-  <table class="table table-sm table-light">
-    <thead>
-      <tr class="table-danger">
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Birthday</th>
-        <th scope="col">Registration date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-primary">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr class="table-primary">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr class="table-primary">
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+  <h3>Patient list</h3>
+  <button type="button" class="btn btn-primary" (click)="newPatientRedirect()">New patient</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Id</th>
+          <th scope="col" class="text-white">Name</th>
+          <th scope="col" class="text-white">Gender</th>
+          <th scope="col" class="text-white">Birthday</th>
+          <th scope="col" class="text-white">Registration date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients" (click)="menuPatient(patient.id)">
+          <th>{{ patient.id}}</th>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.birthDate }}</td>
+          <td>{{ patient.registrationDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <app-footer></app-footer>

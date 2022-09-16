@@ -10,13 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ListpatientComponent implements OnInit {
 
-  patient : PatientI[] = [];
+  patients : PatientI[] = [];
   constructor(private apiService : ApiService, private router : Router) { }
 
   ngOnInit(): void {
     this.apiService.getAllPatients().subscribe(data=>{
-      console.log(data);
+      this.patients = data;
     })
+  }
+
+  menuPatient(id:any)
+  {
+    localStorage.setItem("idPatient", id);
+    console.log(id);
+    //Debe llevarme a un menú patient
+  }
+  newPatientRedirect()
+  {
+    this.router.navigate(['newpatient']);
   }
 
 }
