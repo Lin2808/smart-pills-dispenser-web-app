@@ -8,6 +8,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { LoginComponent } from './views/login/login.component';
 import { EditpatientComponent } from './views/patients/editpatient/editpatient.component';
 import { ListpatientComponent } from './views/patients/listpatient/listpatient.component';
+import { MenupatientComponent } from './views/patients/menupatient/menupatient.component';
 import { NewpatientComponent } from './views/patients/newpatient/newpatient.component';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'confirmateaccount', component:ConfirmateaccountComponent},
   {path: 'newcarer', component:NewcarerComponent},
   {path: 'editcarer', component:EditcarerComponent},
-  {path: 'listpatient', component:ListpatientComponent}
+  {path: 'listpatient', component:ListpatientComponent},
+  {path: 'menupatient', component:MenupatientComponent}
 ];
 
 @NgModule({

@@ -16,14 +16,14 @@ export class ListpatientComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getAllPatients().subscribe(data=>{
       this.patients = data;
+      console.log(data);
     })
   }
 
   menuPatient(id:any)
   {
     localStorage.setItem("idPatient", id);
-    console.log(id);
-    //Debe llevarme a un menú patient
+    this.router.navigate(['editpatient']);
   }
   newPatientRedirect()
   {

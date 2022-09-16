@@ -14,7 +14,8 @@ import { NewcarerComponent } from './views/carer/newcarer/newcarer.component';
 import { EditcarerComponent } from './views/carer/editcarer/editcarer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ListpatientComponent } from './views/patients/listpatient/listpatient.component'
+import { ListpatientComponent } from './views/patients/listpatient/listpatient.component';
+import { MenupatientComponent } from './views/patients/menupatient/menupatient.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListpatientComponent } from './views/patients/listpatient/listpatient.c
     ConfirmateaccountComponent,
     NewcarerComponent,
     EditcarerComponent,
-    ListpatientComponent
+    ListpatientComponent,
+    MenupatientComponent
   ],
   imports: [
     BrowserModule,
