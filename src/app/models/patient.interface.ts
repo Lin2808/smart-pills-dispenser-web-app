@@ -1,9 +1,8 @@
 export interface PatientI
 {
-  id:number;
-  registrationDate:Date;
-  state:boolean;
+  id:string;
+  state:string;
   name:string;
   gender:string;
-  birthDate:Date;
+  birthDate:string;
 }
