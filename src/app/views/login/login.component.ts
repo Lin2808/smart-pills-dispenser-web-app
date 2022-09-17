@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
       {
         if(this.emailElement?.nativeElement.value == carer.email && this.passwordElement?.nativeElement.value == carer.password && carer.state == true)
         {
+          localStorage.setItem("carerId", carer.id.toString());
           localStorage.setItem("email", carer.email);
           this.router.navigate(['dashboard']);
         }

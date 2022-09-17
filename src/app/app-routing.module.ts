@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'editpatient', component:EditpatientComponent},
+  {path:'editpatient/:id', component:EditpatientComponent},
   {path:'newpatient', component:NewpatientComponent},
   {path:'confirmateaccount', component:ConfirmateaccountComponent},
   {path: 'newcarer', component:NewcarerComponent},

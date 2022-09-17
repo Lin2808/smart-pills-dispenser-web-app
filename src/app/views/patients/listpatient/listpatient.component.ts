@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api/api.service'
-import { PatientI } from '../../../models/patient.interface';
+import { PatientListI } from '../../../models/patientlist.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListpatientComponent implements OnInit {
 
-  patients : PatientI[] = [];
+  patients : PatientListI[] = [];
   constructor(private apiService : ApiService, private router : Router) { }
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class ListpatientComponent implements OnInit {
   menuPatient(id:any)
   {
     localStorage.setItem("idPatient", id);
-    this.router.navigate(['editpatient']);
+    this.router.navigate(['editpatient', id]);
   }
   newPatientRedirect()
   {

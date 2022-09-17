@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CarerI } from '../../models/carer.interface';
-import { PatientI } from '../../models/patient.interface'
+import { PatientListI } from '../../models/patientlist.interface';
+import { PatientI } from '../../models/patient.interface';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
@@ -27,9 +29,15 @@ export class ApiService {
     return this.httpClient.get<CarerI[]>(uri);
   }
 
-  getAllPatients():Observable<PatientI[]>
+  getAllPatients():Observable<PatientListI[]>
   {
     let uri = this.url + "patient";
-    return this.httpClient.get<PatientI[]>(uri);
+    return this.httpClient.get<PatientListI[]>(uri);
+  }
+
+  getPatientId(id:any):Observable<PatientI>
+  {
+    let uri = this.url + "patient/" + id;
+    return this.httpClient.get<PatientI>(uri);
   }
 }
