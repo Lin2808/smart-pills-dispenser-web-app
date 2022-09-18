@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { ApiService } from 'src/app/services/api/api.service';
-import { PatientI } from '../../../models/patient.interface';
+import { NewPatientI  } from '../../../models/newpatient.interface';
 import { CarerI } from 'src/app/models/carer.interface';
 
 @Component({
@@ -12,9 +12,11 @@ import { CarerI } from 'src/app/models/carer.interface';
 })
 export class NewpatientComponent implements OnInit {
 
-  patientI!: PatientI;
+  newPatientI: NewPatientI[] = [];
+  patientI: NewPatientI | undefined;
   carerI!: CarerI;
   carerId = localStorage.getItem('carerId');
+
 
   formGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -39,14 +41,22 @@ export class NewpatientComponent implements OnInit {
   create()
   {
     this.apiService.getCarerId(Number(this.carerId)).subscribe(carer =>{
-      //console.log(this.dataPatient(carer.state, carer.registrationDate, carer.name, carer.phoneNumber, carer.email, carer.password, carer.verificationCode, carer.urlImage));
-      this.apiService.registerPatient(this.dataPatient(carer.state, carer.registrationDate, carer.name, carer.phoneNumber, carer.email, carer.password, carer.verificationCode, carer.urlImage));
+      this.newPatientI.push({
+        name: this.nameElement?.nativeElement.value,
+        gender: this.genderElement?.nativeElement.value,
+        birthDate: this.birthdayElement?.nativeElement.value,
+        carer: carer
+      })
+      this.apiService.registerPatient(this.newPatientI).subscribe((data:any) =>{
+        this.router.navigate(['listpatient']);
+      })
     })
   }
 
 dataPatient(carerState:boolean, registrationDate:string, carerName:string, phoneNumber:string, email:string, password:string, verificationCode:string, urlImage:string)
 {
-  return {
+
+  return  {
     name: this.nameElement?.nativeElement.value,
     gender: this.genderElement?.nativeElement.value,
     birthday: this.birthdayElement?.nativeElement.value,

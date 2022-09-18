@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CarerI } from '../../models/carer.interface';
 import { PatientListI } from '../../models/patientlist.interface';
 import { PatientI } from '../../models/patient.interface';
+import { NewPatientI  } from '../../models/newpatient.interface';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
@@ -46,10 +47,10 @@ export class ApiService {
     let uri = this.url + "carer";
     return this.httpClient.post<CarerI>(uri, carerI);
   }
-  registerPatient(patientI : Object):Observable<PatientI>
+  registerPatient(newPatientI : NewPatientI[] = []):Observable<NewPatientI>
   {
-    console.log(patientI);
+    console.log(newPatientI);
     let uri = this.url + "patient";
-    return this.httpClient.post<PatientI>(uri, patientI);
+    return this.httpClient.post<NewPatientI>(uri, newPatientI[0]);
   }
 }
