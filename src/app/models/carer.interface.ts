@@ -2,7 +2,7 @@ export interface CarerI
 {
   id:number;
   state:boolean;
-  registrationDate:Date;
+  registrationDate:string;
   name:string;
   phoneNumber:string;
   email:string;

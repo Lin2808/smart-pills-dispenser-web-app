@@ -23,10 +23,10 @@ export class ApiService {
     return this.httpClient.get<CarerI[]>(uri);
   }
 
-  registerCarer():Observable<CarerI[]>
+  getCarerId(id:number):Observable<CarerI>
   {
-    let uri = this.url +"carer";
-    return this.httpClient.get<CarerI[]>(uri);
+    let uri = this.url + "carer/" + id;
+    return this.httpClient.get<CarerI>(uri);
   }
 
   getAllPatients():Observable<PatientListI[]>
@@ -41,8 +41,14 @@ export class ApiService {
     return this.httpClient.get<PatientI>(uri);
   }
 
-  registerPatient(patientI : PatientI):Observable<PatientI>
+  registerCarer(carerI : CarerI):Observable<CarerI>
   {
+    let uri = this.url + "carer";
+    return this.httpClient.post<CarerI>(uri, carerI);
+  }
+  registerPatient(patientI : Object):Observable<PatientI>
+  {
+    console.log(patientI);
     let uri = this.url + "patient";
     return this.httpClient.post<PatientI>(uri, patientI);
   }

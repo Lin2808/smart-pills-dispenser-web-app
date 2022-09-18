@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-newcarer',
@@ -17,13 +18,16 @@ export class NewcarerComponent implements OnInit {
   urlImage : new FormControl('', Validators.required),
   })
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private apiService : ApiService) { }
 
   ngOnInit(): void {
   }
+
   printConsole(form:any)
   {
-    console.log(form)
+    this.apiService.registerCarer(form).subscribe(data =>{
+      console.log(data);
+    })
     this.router.navigate(['confirmateaccount']);
   }
 
