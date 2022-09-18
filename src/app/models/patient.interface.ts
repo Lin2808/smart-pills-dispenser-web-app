@@ -1,8 +1,11 @@
+import { CarerI } from "./carer.interface";
+
 export interface PatientI
 {
-  id:string;
+  id:number;
   state:string;
   name:string;
   gender:string;
-  birthDate:string;
+  birthDate:Date;
+  carer:CarerI;
 }

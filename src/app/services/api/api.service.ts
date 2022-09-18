@@ -35,9 +35,15 @@ export class ApiService {
     return this.httpClient.get<PatientListI[]>(uri);
   }
 
-  getPatientId(id:any):Observable<PatientI>
+  getPatientId(id:number):Observable<PatientI>
   {
     let uri = this.url + "patient/" + id;
     return this.httpClient.get<PatientI>(uri);
+  }
+
+  registerPatient(patientI : PatientI):Observable<PatientI>
+  {
+    let uri = this.url + "patient";
+    return this.httpClient.post<PatientI>(uri, patientI);
   }
 }

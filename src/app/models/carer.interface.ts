@@ -1,12 +1,12 @@
 export interface CarerI
 {
   id:number;
-  email:string;
-  name:string;
-  password:string;
-  phoneNumber:string;
-  registrationDate:Date;
   state:boolean;
-  urlImage:string;
+  registrationDate:Date;
+  name:string;
+  phoneNumber:string;
+  email:string;
+  password:string;
   verificationCode:string;
+  urlImage:string;
 }

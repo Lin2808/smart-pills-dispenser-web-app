@@ -1,5 +1,8 @@
 import { ElementRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +18,8 @@ import { EditcarerComponent } from './views/carer/editcarer/editcarer.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListpatientComponent } from './views/patients/listpatient/listpatient.component';
-import { MenupatientComponent } from './views/patients/menupatient/menupatient.component'
+import { MenupatientComponent } from './views/patients/menupatient/menupatient.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,7 @@ import { MenupatientComponent } from './views/patients/menupatient/menupatient.c
     NewcarerComponent,
     EditcarerComponent,
     ListpatientComponent,
-    MenupatientComponent
+    MenupatientComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +42,12 @@ import { MenupatientComponent } from './views/patients/menupatient/menupatient.c
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

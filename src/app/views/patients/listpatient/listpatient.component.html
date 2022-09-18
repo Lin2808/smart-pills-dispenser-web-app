@@ -13,15 +13,17 @@
           <th scope="col" class="text-white">Gender</th>
           <th scope="col" class="text-white">Birthday</th>
           <th scope="col" class="text-white">Registration date</th>
+          <th scope="col" class="text-white">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let patient of patients" (click)="menuPatient(patient.id)">
+        <tr *ngFor="let patient of patients">
           <th>{{ patient.id}}</th>
           <td>{{ patient.name }}</td>
           <td>{{ patient.gender }}</td>
           <td>{{ patient.birthDate }}</td>
           <td>{{ patient.registrationDate }}</td>
+          <td><button type="button" class="btn btn-primary" [routerLink]="['/newpatient', patient.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>

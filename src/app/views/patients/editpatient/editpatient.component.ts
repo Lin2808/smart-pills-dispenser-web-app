@@ -15,9 +15,10 @@ export class EditpatientComponent implements OnInit {
 
   //patientI : PatientI[] = [];
   patientI!: PatientI;
+  //patientI:PatientI | undefined;
 
   formGroup = new FormGroup({
-    //id: new FormGroup(''),
+    id: new FormGroup(''),
     state: new FormGroup(''),
     name: new FormGroup(''),
     gender: new FormGroup(''),
@@ -25,20 +26,21 @@ export class EditpatientComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    let patientId = this.activatedRoute.snapshot.paramMap.get('id');
+    let patientId =  this.activatedRoute.snapshot.paramMap.get('id');
     let carerId = this.getCarerId();
-    this.apiService.getPatientId(patientId).subscribe(data =>{
+    //this.apiService.getPatientId(patientId).subscribe((data : any) =>{
       //this.patientI = data[0];
       //console.log(this.patientI);
       //console.log(data);
-      this.formGroup.setValue({
+      //this.formGroup.setValue({
         //'id' : this.patientI.id,
-        'state' : this.patientI.state,
-        'name' : this.patientI.name,
-        'gender' : this.patientI.gender,
-        'birthDate' : this.patientI.birthDate
-      })
-  })
+        //'state' : this.patientI.state,
+        //'name' : this.patientI.name,
+        //'gender' : this.patientI.gender,
+        //'birthDate' : this.patientI.birthDate
+      //});
+      console.log(this.formGroup.value);
+  //})
   }
 
   getCarerId()

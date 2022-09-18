@@ -12,9 +12,5 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  listPatientRedirect()
-  {
-    this.router.navigate(['listpatient']);
-  }
 
 }
