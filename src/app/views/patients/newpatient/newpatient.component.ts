@@ -28,7 +28,7 @@ export class NewpatientComponent implements OnInit {
 
 
   title: string = "Register patient";
-  constructor(private apiService : ApiService, private router : Router, private activatedRoute : ActivatedRoute, private formBuilder : FormBuilder) { }
+  constructor(private apiService : ApiService, private router : Router) { }
 
   @ViewChild('nameElement') nameElement: ElementRef | undefined;
   @ViewChild('genderElement') genderElement: ElementRef | undefined;
@@ -41,38 +41,18 @@ export class NewpatientComponent implements OnInit {
   create()
   {
     this.apiService.getCarerId(Number(this.carerId)).subscribe(carer =>{
+
       this.newPatientI.push({
         name: this.nameElement?.nativeElement.value,
         gender: this.genderElement?.nativeElement.value,
         birthDate: this.birthdayElement?.nativeElement.value,
         carer: carer
       })
+
       this.apiService.registerPatient(this.newPatientI).subscribe((data:any) =>{
         this.router.navigate(['listpatient']);
       })
     })
   }
-
-dataPatient(carerState:boolean, registrationDate:string, carerName:string, phoneNumber:string, email:string, password:string, verificationCode:string, urlImage:string)
-{
-
-  return  {
-    name: this.nameElement?.nativeElement.value,
-    gender: this.genderElement?.nativeElement.value,
-    birthday: this.birthdayElement?.nativeElement.value,
-    carer: {
-      id: this.carerId,
-      state: carerState,
-      registrationDate: registrationDate,
-      name: carerName,
-      phoneNumber: phoneNumber,
-      email: email,
-      password: password,
-      verificationCode: verificationCode,
-      urlImage: urlImage
-
-    }
-  }
-}
 
 }

@@ -13,6 +13,7 @@ export class ConfirmateaccountComponent implements OnInit {
   email = localStorage.getItem('emailVerification');
 
   ngOnInit(): void {
+
   }
 
 }
