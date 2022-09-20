@@ -10,6 +10,7 @@ import { Observable } from 'rxjs'
 import { MedicalTreatmentI } from 'src/app/models/medicaltreatment.interface';
 import { DoctorI } from 'src/app/models/doctor.interface';
 import { NewDoctorI } from 'src/app/models/newdoctor.interface';
+import { NewMedicalTreatmentI } from 'src/app/models/newmedicaltreatment.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -52,10 +53,22 @@ export class ApiService {
     return this.httpClient.get<MedicalTreatmentI[]>(uri);
   }
 
+  registerMedicalTreatments(newMedicalTreatmentI : NewMedicalTreatmentI[] = []):Observable<NewMedicalTreatmentI>
+  {
+    let uri = this.url + "medical-treatment";
+    return this.httpClient.post<NewMedicalTreatmentI>(uri, newMedicalTreatmentI[0]);
+  }
+
   getAllDoctor():Observable<DoctorI[]>
   {
     let uri = this.url + "doctor";
     return this.httpClient.get<DoctorI[]>(uri);
+  }
+
+  getDoctorId(id:number):Observable<DoctorI>
+  {
+    let uri = this.url + "doctor/" + id;
+    return this.httpClient.get<DoctorI>(uri);
   }
 
   registerDoctor(newDoctorI : NewDoctorI[] = []):Observable<NewDoctorI>
