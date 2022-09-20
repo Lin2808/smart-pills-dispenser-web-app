@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api/api.service';
 import { NewPatientI  } from '../../../models/newpatient.interface';
-import { CarerI } from 'src/app/models/carer.interface';
 
 @Component({
   selector: 'app-newpatient',
@@ -13,8 +12,6 @@ import { CarerI } from 'src/app/models/carer.interface';
 export class NewpatientComponent implements OnInit {
 
   newPatientI: NewPatientI[] = [];
-  patientI: NewPatientI | undefined;
-  carerI!: CarerI;
   carerId = localStorage.getItem('carerId');
 
 
@@ -27,7 +24,7 @@ export class NewpatientComponent implements OnInit {
 
 
 
-  title: string = "Register patient";
+  title: string = "Register a new patient";
   constructor(private apiService : ApiService, private router : Router) { }
 
   @ViewChild('nameElement') nameElement: ElementRef | undefined;

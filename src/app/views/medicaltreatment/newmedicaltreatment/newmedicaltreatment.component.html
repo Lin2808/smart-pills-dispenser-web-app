@@ -1,1 +1,41 @@
-<p>newmedicaltreatment works!</p>
+<app-header></app-header>
+
+<div class="flex-row d-flex justify-content-center">
+  <div class="card shadow-2-strong card-registration col-md-8" style="border-radius: 15px">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-3">{{title}}</h3>
+      <form [formGroup]="formGroup" (submit)="create()">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Description</label>
+              <input #descriptionElement type="text" class="form-control" required="true" formControlName="description" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="phoneNumber">Start date</label><br>
+              <input #startDateElement type="date" id="startDate" class="form-control form-control-lg"
+                formControlName="startDate">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Doctor</label>
+              <input #doctorElement type="text" placeholder="Click here to select a doctor" class="form-control" required="true" formControlName="doctor" readonly/>
+            </div>
+          </div>
+        </div>
+
+
+        <input type="submit" class="fadeIn fourth" value="Save">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

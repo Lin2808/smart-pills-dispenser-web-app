@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api/api.service'
 import { PatientListI } from '../../../models/patientlist.interface';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-listpatient',
@@ -21,10 +21,6 @@ export class ListpatientComponent implements OnInit {
   }
 
 
-  newPatientRedirect()
-  {
-    this.router.navigate(['newpatient']);
-  }
   newMedicalTreatment(id:any)
   {
     localStorage.setItem("patientId", id);

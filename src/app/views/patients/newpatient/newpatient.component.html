@@ -4,42 +4,44 @@
 
 
 <div class="flex-row d-flex justify-content-center">
-<div class="card shadow-2-strong card-registration col-md-8" style="border-radius: 15px">
-          <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-3">{{title}}</h3>
-            <form [formGroup]="formGroup" (submit)="create()">
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <label class="form-label" for="firstName">Name</label>
-                    <input #nameElement type="text" class="form-control" required="true" formControlName="name"/>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <label class="form-label" for="Gender">Gender</label>
-                    <select #genderElement id="gender" class="form-control form-control-lg" required="true" formControlName="gender">
-                      <option value="female">Female</option>
-                      <option value="male">Male</option>
-                      <option value="notosay">I prefer not to say</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-                  <div class="form-outline datepicker w-100">
-                    <label class="form-label" for="phoneNumber">Birthday</label><br>
-                    <input #birthdayElement type="date" id="birthday" class="form-control form-control-lg" formControlName="birthday">
-                  </div>
-                </div>
-
-              </div>
-                <input type="submit" class="fadeIn fourth" value="Save">
-            </form>
+  <div class="card shadow-2-strong card-registration col-md-8" style="border-radius: 15px">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-3">{{title}}</h3>
+      <form [formGroup]="formGroup" (submit)="create()">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Name</label>
+              <input #nameElement type="text" class="form-control" required="true" formControlName="name" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="Gender">Gender</label>
+              <select #genderElement id="gender" class="form-control form-control-lg" required="true"
+                formControlName="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="notosay">I prefer not to say</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4 d-flex align-items-center">
+            <div class="form-outline datepicker w-100">
+              <label class="form-label" for="phoneNumber">Birthday</label><br>
+              <input #birthdayElement type="date" id="birthday" class="form-control form-control-lg"
+                formControlName="birthday">
+            </div>
+          </div>
+
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Save">
+      </form>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

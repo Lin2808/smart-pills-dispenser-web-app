@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+
+<div class="container">
+  <h3>Patient list</h3>
+  <button type="button" class="btn btn-primary" [routerLink]="['/newmedicaltreatment']">New treatment</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Id</th>
+          <th scope="col" class="text-white">Description</th>
+          <th scope="col" class="text-white">Registration date</th>
+          <th scope="col" class="text-white">Start date</th>
+          <th scope="col" class="text-white">Doctor</th>
+          <th scope="col" class="text-white">Patient</th>
+          <th scope="col" class="text-white">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicalTreatment of medicalTreatmentI" (click)="newDosage(medicalTreatment.id)" [routerLink]="['/newdosage']">
+          <th>{{ medicalTreatment.id}}</th>
+          <td>{{ medicalTreatment.description }}</td>
+          <td>{{ medicalTreatment.registrationDate }}</td>
+          <td>{{ medicalTreatment.startDate }}</td>
+          <td>{{ medicalTreatment.doctor.name }}</td>
+          <td>{{ medicalTreatment.patient.name }}</td>
+          <td><button type="button" class="btn btn-primary" [routerLink]="['/newdosage', medicalTreatment.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>

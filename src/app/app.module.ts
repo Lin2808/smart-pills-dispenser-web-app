@@ -24,6 +24,7 @@ import { NewmedicaltreatmentComponent } from './views/medicaltreatment/newmedica
 import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedicaltreatment/editmedicaltreatment.component';
 import { NewdosageComponent } from './views/dosages/newdosage/newdosage.component';
 import { EditdosageComponent } from './views/dosages/editdosage/editdosage.component';
+import { ListmedicaltreatmentComponent } from './views/medicaltreatment/listmedicaltreatment/listmedicaltreatment.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { EditdosageComponent } from './views/dosages/editdosage/editdosage.compo
     EditmedicaltreatmentComponent,
     NewdosageComponent,
     EditdosageComponent,
+    ListmedicaltreatmentComponent,
   ],
   imports: [
     BrowserModule,
