@@ -28,6 +28,7 @@ import { ListmedicaltreatmentComponent } from './views/medicaltreatment/listmedi
 import { NewdoctorComponent } from './views/doctor/newdoctor/newdoctor.component';
 import { ListdoctorComponent } from './views/doctor/listdoctor/listdoctor.component';
 import { EditdoctorComponent } from './views/doctor/editdoctor/editdoctor.component';
+import { ListdosageComponent } from './views/dosages/listdosage/listdosage.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { EditdoctorComponent } from './views/doctor/editdoctor/editdoctor.compon
     NewdoctorComponent,
     ListdoctorComponent,
     EditdoctorComponent,
+    ListdosageComponent,
   ],
   imports: [
     BrowserModule,
