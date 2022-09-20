@@ -138,4 +138,10 @@ export class ApiService {
     let uri = this.url + "dosage";
     return this.httpClient.post<NewDosageI>(uri, newDosageI[0]);
   }
+
+  updateCarerState(carerI:CarerI[] = [], id:number):Observable<CarerI>
+  {
+    let uri = this.url + "carer/" + id;
+    return this.httpClient.put<CarerI>(uri, carerI[0]);
+  }
 }
