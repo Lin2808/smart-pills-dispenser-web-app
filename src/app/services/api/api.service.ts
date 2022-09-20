@@ -14,6 +14,7 @@ import { NewMedicalTreatmentI } from 'src/app/models/newmedicaltreatment.interfa
 import { PillI } from 'src/app/models/pill.interface';
 import { NewPillI } from 'src/app/models/newpill.interface';
 import { DosageI } from 'src/app/models/dosage.interface';
+import { NewDosageI } from 'src/app/models/newdosage.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +62,12 @@ export class ApiService {
     return this.httpClient.get<MedicalTreatmentI[]>(uri);
   }
 
+  getMedicalTreatmentId(id:number):Observable<MedicalTreatmentI>
+  {
+    let uri = this.url + "medical-treatment/" + id;
+    return this.httpClient.get<MedicalTreatmentI>(uri);
+  }
+
   getMedicalTreatmentsIdPatient(id:number):Observable<MedicalTreatmentI>
   {
     let uri = this.url + "patient/medical-treatments/" + id;
@@ -83,6 +90,12 @@ export class ApiService {
   {
     let uri = this.url + "pill";
     return this.httpClient.get<PillI[]>(uri);
+  }
+
+  getPillId(id:number):Observable<PillI>
+  {
+    let uri = this.url + "pill/" + id;
+    return this.httpClient.get<PillI>(uri);
   }
 
   getDoctorId(id:number):Observable<DoctorI>
@@ -118,5 +131,11 @@ export class ApiService {
   {
     let uri = this.url + "pill";
     return this.httpClient.post<NewPillI>(uri, newPillI[0]);
+  }
+
+  registerDosage(newDosageI : NewDosageI[] = []):Observable<NewDosageI>
+  {
+    let uri = this.url + "dosage";
+    return this.httpClient.post<NewDosageI>(uri, newDosageI[0]);
   }
 }

@@ -17,7 +17,8 @@ export class NewmedicaltreatmentComponent implements OnInit {
   doctors: DoctorI[] = [];
   patient: PatientI[] = [];
   patientId = localStorage.getItem('patientId');
-  doctorId = localStorage.getItem('doctorId');
+  //doctorId = localStorage.getItem('doctorId');
+
 
   formGroup = new FormGroup({
     description: new FormControl('', Validators.required),
@@ -34,22 +35,22 @@ export class NewmedicaltreatmentComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getAllDoctor().subscribe((data) => {
       this.doctors = data;
-      console.log(data);
     });
   }
   doctorName: any;
 
   getDoctorId(id: any, name: any) {
     localStorage.setItem('doctorId', id);
-    console.log(id);
     this.doctorName = name;
   }
 
   create() {
+    const doctorId = localStorage.getItem('doctorId');
+    console.log(doctorId);
     this.apiService.getPatientId(Number(this.patientId)).subscribe((patient) => {
-        console.log(patient);
-        this.apiService.getDoctorId(Number(this.doctorId)).subscribe((doctor) => {
-            console.log(doctor);
+        //console.log(patient);
+        this.apiService.getDoctorId(Number(doctorId)).subscribe((doctor) => {
+            //console.log(doctor);
 
             this.newMedicalTreatment.push({
               description: this.descriptionElement?.nativeElement.value,
@@ -58,11 +59,11 @@ export class NewmedicaltreatmentComponent implements OnInit {
               patient: patient,
             });
 
-            console.log(this.newMedicalTreatment);
+            //console.log(this.newMedicalTreatment);
 
             this.apiService.registerMedicalTreatments(this.newMedicalTreatment).subscribe((data: any) => {
-                this.router.navigate(['listmedicaltreatment']);
-              });
+              this.router.navigate(['listmedicaltreatment']);
+            });
           });
       });
   }
