@@ -11,10 +11,11 @@ import { Router } from '@angular/router'
 export class ListpatientComponent implements OnInit {
 
   patients : PatientListI[] = [];
+  carerId = localStorage.getItem('carerId');
   constructor(private apiService : ApiService, private router : Router) { }
 
   ngOnInit(): void {
-    this.apiService.getAllPatients().subscribe(data=>{
+    this.apiService.getPatientIdCarer(Number(this.carerId)).subscribe((data:any)=>{
       this.patients = data;
       console.log(data);
     })

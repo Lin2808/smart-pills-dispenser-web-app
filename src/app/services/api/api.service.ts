@@ -13,6 +13,7 @@ import { NewDoctorI } from 'src/app/models/newdoctor.interface';
 import { NewMedicalTreatmentI } from 'src/app/models/newmedicaltreatment.interface';
 import { PillI } from 'src/app/models/pill.interface';
 import { NewPillI } from 'src/app/models/newpill.interface';
+import { DosageI } from 'src/app/models/dosage.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -48,11 +49,28 @@ export class ApiService {
     let uri = this.url + "patient/" + id;
     return this.httpClient.get<PatientI>(uri);
   }
+  getPatientIdCarer(id:number):Observable<PatientI>
+  {
+    let uri = this.url + "patient/bar/" + id;
+    return this.httpClient.get<PatientI>(uri);
+  }
 
   getAllMedicalTreatments():Observable<MedicalTreatmentI[]>
   {
     let uri = this.url + "medical-treatment";
     return this.httpClient.get<MedicalTreatmentI[]>(uri);
+  }
+
+  getMedicalTreatmentsIdPatient(id:number):Observable<MedicalTreatmentI>
+  {
+    let uri = this.url + "patient/medical-treatments/" + id;
+    return this.httpClient.get<MedicalTreatmentI>(uri);
+  }
+
+  getDosageIdMedicalTreatments(id:number):Observable<DosageI>
+  {
+    let uri = this.url + "medical-treatment/dosages/" + id;
+    return this.httpClient.get<DosageI>(uri);
   }
 
   getAllDoctor():Observable<DoctorI[]>

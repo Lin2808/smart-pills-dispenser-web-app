@@ -1,1 +1,35 @@
-<p>listdosage works!</p>
+<app-header></app-header>
+
+<div class="container">
+  <h3>Dosage list</h3>
+  <button type="button" class="btn btn-primary" [routerLink]="['/newdosage']">New dosage</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Id</th>
+          <th scope="col" class="text-white">Pill name</th>
+          <th scope="col" class="text-white">Prescription</th>
+          <th scope="col" class="text-white">Date hour</th>
+          <th scope="col" class="text-white">Quantity</th>
+          <th scope="col" class="text-white">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dosage of dosages">
+          <th>{{ dosage.id }}</th>
+          <td>{{ dosage.pill.name }}</td>
+          <td>{{ dosage.prescription }}</td>
+          <td>{{ dosage.dateHour }}</td>
+          <td>{{ dosage.quantity }}</td>
+          <td><button type="button" class="btn btn-primary">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>

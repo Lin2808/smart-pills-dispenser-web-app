@@ -12,6 +12,5 @@ export interface DosageI
   prescription:string,
   dateTake:string,
   pill:PillI,
-  medicalTreatment:MedicalTreatmentI,
-  patient:PatientI
+  medicalTreatment:MedicalTreatmentI
 }
