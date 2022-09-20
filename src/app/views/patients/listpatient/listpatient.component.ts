@@ -25,5 +25,10 @@ export class ListpatientComponent implements OnInit {
   {
     this.router.navigate(['newpatient']);
   }
+  newMedicalTreatment(id:any)
+  {
+    localStorage.setItem("patientId", id);
+    console.log(id);
+  }
 
 }
