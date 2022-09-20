@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListpatientComponent } from './views/patients/listpatient/listpatient.component';
 import { MenupatientComponent } from './views/patients/menupatient/menupatient.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewmedicaltreatmentComponent } from './views/medicaltreatment/newmedicaltreatment/newmedicaltreatment.component';
+import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedicaltreatment/editmedicaltreatment.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EditcarerComponent,
     ListpatientComponent,
     MenupatientComponent,
+    NewmedicaltreatmentComponent,
+    EditmedicaltreatmentComponent,
   ],
   imports: [
     BrowserModule,
