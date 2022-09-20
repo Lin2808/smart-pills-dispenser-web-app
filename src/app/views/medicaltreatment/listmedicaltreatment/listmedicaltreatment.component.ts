@@ -16,7 +16,7 @@ export class ListmedicaltreatmentComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getAllMedicalTreatments().subscribe(data=>{
       this.medicalTreatmentI = data;
-      console.log(data);
+      console.log(data)
     })
   }
 

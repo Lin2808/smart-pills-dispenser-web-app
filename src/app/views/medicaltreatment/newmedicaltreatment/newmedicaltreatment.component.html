@@ -25,14 +25,48 @@
           <div class="col-md-6 mb-4">
             <div class="form-outline">
               <label class="form-label" for="firstName">Doctor</label>
-              <input #doctorElement type="text" placeholder="Click here to select a doctor" class="form-control" required="true" formControlName="doctor" readonly/>
+              <input #doctorElement type="text" placeholder="Select a doctor from the list below" class="form-control" required="true" formControlName="doctor" [(ngModel)]="doctorName" readonly/>
             </div>
           </div>
         </div>
 
 
+        <div class="container">
+          <div style="float: right">
+            <button type="button" class="btn btn-primary" [routerLink]="['/newdoctor']">New doctor</button>
+          </div>
+          <br>
+          <br>
+          <div class="table-responsive">
+            <br>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-white">Id</th>
+                  <th scope="col" class="text-white">Name</th>
+                  <th scope="col" class="text-white">Specialims</th>
+                  <th scope="col" class="text-white">Phone number</th>
+                  <th scope="col" class="text-white">Address</th>
+                  <th scope="col" class="text-white">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let doctor of doctors" (click)="getDoctorId(doctor.id, doctor.name)">
+                  <th>{{ doctor.id}}</th>
+                  <td>{{ doctor.name }}</td>
+                  <td>{{ doctor.specialism }}</td>
+                  <td>{{ doctor.phoneNumber }}</td>
+                  <td>{{ doctor.direction }}</td>
+                  <td><button type="button" class="btn btn-primary" [routerLink]="['/editdoctor', doctor.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <input type="submit" class="fadeIn fourth" value="Save">
       </form>
+
     </div>
   </div>
 </div>

@@ -18,8 +18,7 @@ export class NewpatientComponent implements OnInit {
   formGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     gender: new FormControl('', Validators.required),
-    birthday: new FormControl('', Validators.required),
-    state: new FormControl('', Validators.required),
+    birthday: new FormControl('', Validators.required)
   });
 
 

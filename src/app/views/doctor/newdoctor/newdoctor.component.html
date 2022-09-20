@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+
+<div class="flex-row d-flex justify-content-center">
+  <div class="card shadow-2-strong card-registration col-md-8" style="border-radius: 15px">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-3">{{title}}</h3>
+      <form [formGroup]="formGroup" (submit)="create()">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Name</label>
+              <input #nameElement type="text" class="form-control" required="true" formControlName="name" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Specialism</label>
+              <input #specialismElement type="text" class="form-control" required="true" formControlName="specialism" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Phone number</label>
+              <input #phoneNumberElement type="text" class="form-control" required="true" formControlName="phoneNumber" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Email</label>
+              <input #emailElement type="text" class="form-control" required="true" formControlName="email" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label" for="firstName">Address</label>
+              <input #addressElement type="text" class="form-control" required="true" formControlName="address" />
+            </div>
+          </div>
+        </div>
+
+
+        <input type="submit" class="fadeIn fourth" value="Save">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

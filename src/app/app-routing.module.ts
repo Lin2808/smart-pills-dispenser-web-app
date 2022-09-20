@@ -14,6 +14,9 @@ import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedi
 import { NewdosageComponent } from './views/dosages/newdosage/newdosage.component';
 import { EditdosageComponent } from './views/dosages/editdosage/editdosage.component';
 import { ListmedicaltreatmentComponent } from './views/medicaltreatment/listmedicaltreatment/listmedicaltreatment.component';
+import  { NewdoctorComponent } from './views/doctor/newdoctor/newdoctor.component'
+import  { EditdoctorComponent } from './views/doctor/editdoctor/editdoctor.component'
+import  { ListdoctorComponent } from './views/doctor/listdoctor/listdoctor.component'
 
 
 const routes: Routes = [
@@ -31,7 +34,10 @@ const routes: Routes = [
   {path: 'editmedicaltreatment/:id', component:EditmedicaltreatmentComponent},
   {path: 'newdosage', component:NewdosageComponent},
   {path: 'editdosage/:id', component:EditdosageComponent},
-  {path: 'listmedicaltreatment', component:ListmedicaltreatmentComponent}
+  {path: 'listmedicaltreatment', component:ListmedicaltreatmentComponent},
+  {path: 'newdoctor', component:NewdoctorComponent},
+  {path: 'editdoctor/:id', component:EditdoctorComponent},
+  {path: 'listdoctor', component:ListdoctorComponent}
 ];
 
 @NgModule({

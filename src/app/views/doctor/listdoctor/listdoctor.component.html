@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+
+<div class="container">
+  <h3>Doctor list</h3>
+  <button type="button" class="btn btn-primary" [routerLink]="['/newdoctor']">New doctor</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Id</th>
+          <th scope="col" class="text-white">Name</th>
+          <th scope="col" class="text-white">Email</th>
+          <th scope="col" class="text-white">Specialims</th>
+          <th scope="col" class="text-white">Phone number</th>
+          <th scope="col" class="text-white">Direction</th>
+          <th scope="col" class="text-white">Registration date</th>
+          <th scope="col" class="text-white">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors" (click)="captureIdDoctor(doctor.id)" [routerLink]="['/newdosage']">
+          <th>{{ doctor.id}}</th>
+          <td>{{ doctor.name }}</td>
+          <td>{{ doctor.email }}</td>
+          <td>{{ doctor.specialism }}</td>
+          <td>{{ doctor.phoneNumber }}</td>
+          <td>{{ doctor.direction }}</td>
+          <td>{{ doctor.registrationDate }}</td>
+          <td><button type="button" class="btn btn-primary" [routerLink]="['/editdoctor', doctor.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
