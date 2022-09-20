@@ -1,3 +1,92 @@
 <app-header></app-header>
 
+
+
+
+
+<div class="flex-row d-flex justify-content-center">
+  <div class="card shadow-2-strong card-registration col-md-8" style="border-radius: 15px">
+    <div class="card-body p-4 p-md-5">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-3">{{title}}</h3>
+      <form [formGroup]="formGroup" (submit)="create()">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Prescription</label>
+              <input #prescriptionElement type="text" class="form-control" required="true" formControlName="prescription" />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Quantity</label><br>
+              <input #quantityElement type="text" class="form-control" required="true" formControlName="quantity" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Select Date</label>
+              <input #selectDateElementElement type="date" id="selectDateElement" class="form-control form-control-lg"
+                formControlName="selectDateElement">
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Select Hour</label><br>
+              <input #selectHourElement type="date" id="selectHourElement" class="form-control form-control-lg"
+                formControlName="selectHourElement">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <label class="form-label">Pill</label>
+              <input #pillElement type="text" placeholder="Select a pill from the list below" class="form-control" required="true" formControlName="pill" [(ngModel)]="pillName" readonly/>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div style="float: right">
+            <button type="button" class="btn btn-primary" [routerLink]="['/newpill']">New Pill</button>
+          </div>
+          <br>
+          <br>
+          <div class="table-responsive">
+            <br>
+            <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-white">Id</th>
+                  <th scope="col" class="text-white">Name</th>
+                  <th scope="col" class="text-white">Description</th>
+                  <th scope="col" class="text-white">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pill of pills" (click)="getPillId(pill.id, pill.name)">
+                  <th>{{ pill.id}}</th>
+                  <td>{{ pill.name }}</td>
+                  <td>{{ pill.description }}</td>
+                  <td><button type="button" class="btn btn-primary" [routerLink]="['/editpill', pill.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <input type="submit" class="fadeIn fourth" value="Save">
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
 <app-footer></app-footer>

@@ -18,6 +18,8 @@ import { NewdoctorComponent } from './views/doctor/newdoctor/newdoctor.component
 import { EditdoctorComponent } from './views/doctor/editdoctor/editdoctor.component';
 import { ListdoctorComponent } from './views/doctor/listdoctor/listdoctor.component';
 import { ListdosageComponent } from './views/dosages/listdosage/listdosage.component';
+import { ListpillComponent } from './views/pill/listpill/listpill.component';
+import { NewpillComponent } from './views/pill/newpill/newpill.component';
 
 
 const routes: Routes = [
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path: 'newdoctor', component:NewdoctorComponent},
   {path: 'editdoctor/:id', component:EditdoctorComponent},
   {path: 'listdoctor', component:ListdoctorComponent},
-  {path: 'listdosage', component:ListdosageComponent}
+  {path: 'listdosage', component:ListdosageComponent},
+  {path: 'listpill', component:ListpillComponent},
+  {path: 'newpill', component:NewpillComponent}
 ];
 
 @NgModule({
