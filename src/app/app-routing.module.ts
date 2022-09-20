@@ -9,6 +9,9 @@ import { LoginComponent } from './views/login/login.component';
 import { ListpatientComponent } from './views/patients/listpatient/listpatient.component';
 import { MenupatientComponent } from './views/patients/menupatient/menupatient.component';
 import { NewpatientComponent } from './views/patients/newpatient/newpatient.component';
+import { NewmedicaltreatmentComponent } from './views/medicaltreatment/newmedicaltreatment/newmedicaltreatment.component';
+import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedicaltreatment/editmedicaltreatment.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -20,7 +23,9 @@ const routes: Routes = [
   {path: 'newcarer', component:NewcarerComponent},
   {path: 'editcarer', component:EditcarerComponent},
   {path: 'listpatient', component:ListpatientComponent},
-  {path: 'menupatient', component:MenupatientComponent}
+  {path: 'menupatient', component:MenupatientComponent},
+  {path: 'newmedicaltreatmentComponent', component:NewmedicaltreatmentComponent},
+  {path: 'editmedicaltreatmentComponent/:id', component:EditmedicaltreatmentComponent}
 ];
 
 @NgModule({

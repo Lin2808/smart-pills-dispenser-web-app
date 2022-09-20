@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let patient of patients" (click)="newMedicalTreatment(patient.id)">
+        <tr *ngFor="let patient of patients" (click)="newMedicalTreatment(patient.id)" [routerLink]="['/menupatient']">
           <th>{{ patient.id}}</th>
           <td>{{ patient.name }}</td>
           <td>{{ patient.gender }}</td>

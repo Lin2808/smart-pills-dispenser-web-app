@@ -22,6 +22,8 @@ import { MenupatientComponent } from './views/patients/menupatient/menupatient.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewmedicaltreatmentComponent } from './views/medicaltreatment/newmedicaltreatment/newmedicaltreatment.component';
 import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedicaltreatment/editmedicaltreatment.component';
+import { NewdosageComponent } from './views/dosages/newdosage/newdosage.component';
+import { EditdosageComponent } from './views/dosages/editdosage/editdosage.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { EditmedicaltreatmentComponent } from './views/medicaltreatment/editmedi
     MenupatientComponent,
     NewmedicaltreatmentComponent,
     EditmedicaltreatmentComponent,
+    NewdosageComponent,
+    EditdosageComponent,
   ],
   imports: [
     BrowserModule,
