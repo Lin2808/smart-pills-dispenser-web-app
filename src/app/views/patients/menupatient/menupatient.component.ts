@@ -12,4 +12,5 @@ export class MenupatientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
