@@ -16,7 +16,6 @@
           <th scope="col" class="text-white">Phone number</th>
           <th scope="col" class="text-white">Direction</th>
           <th scope="col" class="text-white">Registration date</th>
-          <th scope="col" class="text-white">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +27,6 @@
           <td>{{ doctor.phoneNumber }}</td>
           <td>{{ doctor.direction }}</td>
           <td>{{ doctor.registrationDate }}</td>
-          <td><button type="button" class="btn btn-primary" [routerLink]="['/editdoctor', doctor.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>

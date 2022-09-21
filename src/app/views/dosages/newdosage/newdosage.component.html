@@ -64,7 +64,6 @@
                   <th scope="col" class="text-white">Id</th>
                   <th scope="col" class="text-white">Name</th>
                   <th scope="col" class="text-white">Description</th>
-                  <th scope="col" class="text-white">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -72,7 +71,6 @@
                   <th>{{ pill.id}}</th>
                   <td>{{ pill.name }}</td>
                   <td>{{ pill.description }}</td>
-                  <td><button type="button" class="btn btn-primary" [routerLink]="['/editpill', pill.id]">Edit</button> <button type="button" class="btn btn-danger">Delete</button></td>
                 </tr>
               </tbody>
             </table>
