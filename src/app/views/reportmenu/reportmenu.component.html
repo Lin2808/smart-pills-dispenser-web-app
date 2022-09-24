@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card mx-4 my-4" style="width: 18rem;" >
+      <div class="justify-content-center">
+      <img src="assets/Patients.png" class="card-img-top" alt="My patients report">
+    </div>
+      <div class="card-body">
+        <h2 class="card-title">My patients report</h2>
+          <h3>See your patients in a report</h3>
+          <a class="btn btn-primary" (click)="printYourPatientsReport();">Go</a>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="card mx-4 my-4" style="width: 18rem;" >
+      <div class="justify-content-center">
+      <img src="assets/Patients.png" class="card-img-top" alt="My patients">
+    </div>
+      <div class="card-body">
+        <h2 class="card-title">Patients who have not taken their medicine</h2>
+          <h3>See your patient in a report</h3>
+          <a class="btn btn-primary" (click)="printYourPatientsNoDosage();">Go</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

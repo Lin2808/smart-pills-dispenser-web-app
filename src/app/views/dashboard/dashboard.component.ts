@@ -11,36 +11,11 @@ import { AllpatientsService } from 'src/app/services/report/allpatients.service'
 })
 export class DashboardComponent implements OnInit {
 
-  patients : PatientListI[] = [];
   carerId = localStorage.getItem('carerId');
 
-  constructor(private router : Router, private allpatientsService:AllpatientsService, private apiService:ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  printReport()
-  {
-    const header = ["Id", "Name", "Registration date", "Gender", "Birthday"];
-    /*const body = [["1", "Lin", "2022-09-15", "Male","1995-08-28"],
-                  ["1", "Melina", "2022-09-15", "Male","1995-08-28"]];*/
-
-                  this.apiService.getPatientIdCarer(Number(this.carerId)).subscribe(data =>{
-                    const body = Object(data).map(
-                      (obj:any)=>{
-                        const datos = [
-                          obj.id,
-                          obj.name,
-                          obj.registrationDate,
-                          obj.gender,
-                          obj.birthDate
-                        ]
-                        return datos;
-                      }
-                    )
-                    console.log(body);
-                    this.allpatientsService.print(header, body, "Patient list", true);
-                  })
   }
 
 }

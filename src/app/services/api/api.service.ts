@@ -73,6 +73,11 @@ export class ApiService {
     let uri = this.url + "patient/medical-treatments/" + id;
     return this.httpClient.get<MedicalTreatmentI>(uri);
   }
+  getAllDosages():Observable<DosageI[]>
+  {
+    let uri = this.url + "dosage";
+    return this.httpClient.get<DosageI[]>(uri);
+  }
 
   getDosageIdMedicalTreatments(id:number):Observable<DosageI>
   {
