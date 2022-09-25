@@ -1,1 +1,30 @@
-<p>patients works!</p>
+<app-header></app-header>
+
+<div class="container">
+  <h3>Patient list</h3>
+  <button type="button" class="btn btn-primary" (click)="printYourPatientsReport();">See report</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Id</th>
+          <th scope="col" class="text-white">Name</th>
+          <th scope="col" class="text-white">Gender</th>
+          <th scope="col" class="text-white">Birthday</th>
+          <th scope="col" class="text-white">Registration date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <th>{{ patient.id}}</th>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.birthDate }}</td>
+          <td>{{ patient.registrationDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

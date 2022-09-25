@@ -1,1 +1,28 @@
-<p>patientsnodosage works!</p>
+<app-header></app-header>
+
+<div class="container">
+  <h3>Patient list</h3>
+  <button type="button" class="btn btn-primary" (click)="printYourPatientsNoDosage();">See report</button>
+  <div class="table-responsive">
+    <br>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col" class="text-white">Patient name</th>
+          <th scope="col" class="text-white">Medical treatment</th>
+          <th scope="col" class="text-white">Dosage</th>
+          <th scope="col" class="text-white">Date take</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dosageList of containerInformation">
+          <th>{{ dosageList.name }}</th>
+          <td>{{ dosageList.description }}</td>
+          <td>{{ dosageList.prescription}}</td>
+          <td>{{ dosageList.dateTake}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>
