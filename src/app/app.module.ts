@@ -32,6 +32,9 @@ import { ListdosageComponent } from './views/dosages/listdosage/listdosage.compo
 import { ListpillComponent } from './views/pill/listpill/listpill.component';
 import { NewpillComponent } from './views/pill/newpill/newpill.component';
 import { ReportmenuComponent } from './views/reportmenu/reportmenu.component';
+import { PatientsComponent } from './views/reports/patients/patients.component';
+import { PatientsnodosageComponent } from './views/reports/patientsnodosage/patientsnodosage.component';
+import { MenuComponent } from './views/reports/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { ReportmenuComponent } from './views/reportmenu/reportmenu.component';
     ListpillComponent,
     NewpillComponent,
     ReportmenuComponent,
+    PatientsComponent,
+    PatientsnodosageComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
