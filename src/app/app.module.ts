@@ -31,10 +31,10 @@ import { EditdoctorComponent } from './views/doctor/editdoctor/editdoctor.compon
 import { ListdosageComponent } from './views/dosages/listdosage/listdosage.component';
 import { ListpillComponent } from './views/pill/listpill/listpill.component';
 import { NewpillComponent } from './views/pill/newpill/newpill.component';
-import { ReportmenuComponent } from './views/reportmenu/reportmenu.component';
 import { PatientsComponent } from './views/reports/patients/patients.component';
 import { PatientsnodosageComponent } from './views/reports/patientsnodosage/patientsnodosage.component';
 import { MenuComponent } from './views/reports/menu/menu.component';
+import { ScheduleComponent } from './views/reports/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -61,10 +61,10 @@ import { MenuComponent } from './views/reports/menu/menu.component';
     ListdosageComponent,
     ListpillComponent,
     NewpillComponent,
-    ReportmenuComponent,
     PatientsComponent,
     PatientsnodosageComponent,
     MenuComponent,
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,

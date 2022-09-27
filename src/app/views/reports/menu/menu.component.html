@@ -2,27 +2,40 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="card mx-4 my-4" style="width: 18rem;" >
+    <div class="card mx-4 my-4" style="width: 18rem;">
       <div class="justify-content-center">
-      <img src="assets/mypatients.png" class="card-img-top" alt="My patients report">
-    </div>
+        <img src="assets/mypatients.png" class="card-img-top" alt="My patients report">
+      </div>
       <div class="card-body">
         <h2 class="card-title">My patients report</h2>
-          <h3>See your patients</h3>
-          <h3>See/Download a report</h3>
-          <a class="btn btn-primary" [routerLink]="['/patienreport']">Go</a>
+        <h3>See your patients</h3>
+        <h3>See/Download a report</h3>
+        <a class="btn btn-primary" [routerLink]="['/patienreport']">Go</a>
       </div>
     </div>
 
-    <div class="card mx-4 my-4" style="width: 18rem;" >
+    <div class="card mx-4 my-4" style="width: 18rem;">
       <div class="justify-content-center">
-      <img src="assets/patientsnodosage.png" class="card-img-top" alt="My patients">
-    </div>
+        <img src="assets/patientsnodosage.png" class="card-img-top" alt="My patients">
+      </div>
       <div class="card-body">
         <h2 class="card-title">Patients who have not taken their medicine</h2>
-          <h3>See your patient in a report</h3>
-          <h3>See/Download a report</h3>
-          <a class="btn btn-primary" [routerLink]="['/patientnodosagereport']">Go</a>
+        <h3>See your patient in a report</h3>
+        <h3>See/Download a report</h3>
+        <a class="btn btn-primary" [routerLink]="['/patientnodosagereport']">Go</a>
+      </div>
+    </div>
+
+
+    <div class="card mx-4 my-4" style="width: 18rem;">
+      <div class="justify-content-center">
+        <img src="assets/Schedules.png" class="card-img-top" alt="My schedules">
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">Schedules</h2>
+        <h3>See your schedule in a report</h3>
+        <h3>See/Download a report</h3>
+        <a class="btn btn-primary" [routerLink]="['/schedule']">Go</a>
       </div>
     </div>
   </div>

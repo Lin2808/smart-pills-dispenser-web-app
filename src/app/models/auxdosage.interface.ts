@@ -1,3 +1,5 @@
+import { PillI } from "./pill.interface";
+
 export interface AuxDosageI
 {
   name:string,

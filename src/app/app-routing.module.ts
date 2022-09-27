@@ -23,6 +23,7 @@ import { NewpillComponent } from './views/pill/newpill/newpill.component';
 import { MenuComponent } from './views/reports/menu/menu.component';
 import { PatientsComponent } from './views/reports/patients/patients.component';
 import { PatientsnodosageComponent } from './views/reports/patientsnodosage/patientsnodosage.component';
+import { ScheduleComponent } from './views/reports/schedule/schedule.component';
 
 
 const routes: Routes = [
@@ -49,7 +50,8 @@ const routes: Routes = [
   {path: 'newpill', component:NewpillComponent},
   {path: 'reportmenu', component:MenuComponent},
   {path: 'patienreport', component:PatientsComponent},
-  {path: 'patientnodosagereport', component:PatientsnodosageComponent}
+  {path: 'patientnodosagereport', component:PatientsnodosageComponent},
+  {path: 'schedule', component:ScheduleComponent}
 ];
 
 @NgModule({
