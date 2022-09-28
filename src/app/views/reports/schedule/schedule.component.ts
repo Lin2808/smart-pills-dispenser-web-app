@@ -43,6 +43,8 @@ export class ScheduleComponent implements OnInit {
                   name : dosageList.medicalTreatment.patient.name,
                   description : dosageList.medicalTreatment.description,
                   prescription : dosageList.prescription,
+                  pillName: dosageList.pill.name,
+                  quantity : dosageList.quantity,
                   dateTake : dosageList.dateTake
                 });
               }
@@ -57,7 +59,7 @@ export class ScheduleComponent implements OnInit {
 
   printYourSchedule()
   {
-    const header = ['Patient', 'Medical treatment', 'Dosage', 'Hour'];
+    const header = ['Patient', 'Medical treatment', 'Dosage', 'Pill', 'Quantity', 'Hour'];
     this.containerInformation = [];
     const date = new Date();
     date.setMinutes(date.getMinutes() - 1);
@@ -77,6 +79,8 @@ export class ScheduleComponent implements OnInit {
                   name : dosageList.medicalTreatment.patient.name,
                   description : dosageList.medicalTreatment.description,
                   prescription : dosageList.prescription,
+                  pillName: dosageList.pill.name,
+                  quantity : dosageList.quantity,
                   dateTake : dosageList.dateTake
                 });
               }
@@ -90,14 +94,15 @@ export class ScheduleComponent implements OnInit {
             obj.name,
             obj.description,
             obj.prescription,
+            obj.pillName,
+            obj.quantity,
             obj.dateTake,
           ];
           return datos;
         });
 
         console.log('Body: ' + body);
-          this.allpatientsService.print(header, body, 'Patient list', true);
-
+          this.allpatientsService.print(header, body, 'Schedule', true);
       })
     })
   }

@@ -37,20 +37,15 @@ export class PatientsnodosageComponent implements OnInit {
                 dosageDate.setMinutes(dosageDate.getMinutes() + 5);
                 dosageDate = new Date(dosageDate);
                 if (dosageDate <= date && dosageList.state == true) {
-                  console.log(
-                    dosageList.medicalTreatment.patient.name +
-                      '   ' +
-                      dosageList.medicalTreatment.description +
-                      '   ' +
-                      dosageList.prescription +
-                      '    ' +
-                      dosageList.dateTake
+                  console.log(dosageList.medicalTreatment.patient.name + '   ' + dosageList.medicalTreatment.description + '   ' + dosageList.prescription + '    ' + dosageList.dateTake
                   );
                   this.containerInformation.push({
-                    name: dosageList.medicalTreatment.patient.name,
-                    description: dosageList.medicalTreatment.description,
-                    prescription: dosageList.prescription,
-                    dateTake: dosageList.dateTake,
+                    name : dosageList.medicalTreatment.patient.name,
+                  description : dosageList.medicalTreatment.description,
+                  prescription : dosageList.prescription,
+                  pillName: dosageList.pill.name,
+                  quantity : dosageList.quantity,
+                  dateTake : dosageList.dateTake
                   });
                 }
               }
@@ -62,11 +57,10 @@ export class PatientsnodosageComponent implements OnInit {
   printYourPatientsNoDosage() {
     this.containerInformation = [];
     const date = new Date();
-    const header = ['Patient', 'Medical treatment', 'Dosage', 'Hour'];
-    this.apiService
-      .getPatientIdCarer(Number(this.carerId))
-      .subscribe((data: any) => {
+    const header = ['Patient', 'Medical treatment', 'Dosage', 'Pill', 'Quantity', 'Hour'];
+    this.apiService.getPatientIdCarer(Number(this.carerId)).subscribe((data: any) => {
         this.apiService.getAllDosages().subscribe((dosages: any) => {
+          console.log(dosages);
           for (let dosageList of dosages) {
             for (let patientList of data) {
               if (dosageList.medicalTreatment.patient.id == patientList.id) {
@@ -77,10 +71,12 @@ export class PatientsnodosageComponent implements OnInit {
                   //console.log(dosageList.medicalTreatment.patient.name + "   " + dosageList.medicalTreatment.description + "   " + dosageList.prescription + "    " + dosageList.dateTake);
 
                   this.containerInformation.push({
-                    name: dosageList.medicalTreatment.patient.name,
-                    description: dosageList.medicalTreatment.description,
-                    prescription: dosageList.prescription,
-                    dateTake: dosageList.dateTake,
+                    name : dosageList.medicalTreatment.patient.name,
+                  description : dosageList.medicalTreatment.description,
+                  prescription : dosageList.prescription,
+                  pillName: dosageList.pill.name,
+                  quantity : dosageList.quantity,
+                  dateTake : dosageList.dateTake
                   });
                 }
               }
@@ -89,15 +85,17 @@ export class PatientsnodosageComponent implements OnInit {
           const body = Object(this.containerInformation).map((obj: any) => {
             const datos = [
               obj.name,
-              obj.description,
-              obj.prescription,
-              obj.dateTake,
+            obj.description,
+            obj.prescription,
+            obj.pillName,
+            obj.quantity,
+            obj.dateTake,
             ];
             return datos;
           });
           console.log('Body: ' + body);
           this.allpatientsService.print(header, body, 'Patient list', true);
-        });
+        })
       });
   }
 }

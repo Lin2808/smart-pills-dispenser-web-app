@@ -10,7 +10,9 @@
         <tr>
           <th scope="col" class="text-white">Patient name</th>
           <th scope="col" class="text-white">Medical treatment</th>
-          <th scope="col" class="text-white">Dosage</th>
+          <th scope="col" class="text-white">Prescription</th>
+          <th scope="col" class="text-white">Pill name</th>
+          <th scope="col" class="text-white">Quantity</th>
           <th scope="col" class="text-white">Date take</th>
         </tr>
       </thead>
@@ -19,6 +21,8 @@
           <th>{{ dosageList.name }}</th>
           <td>{{ dosageList.description }}</td>
           <td>{{ dosageList.prescription}}</td>
+          <td>{{ dosageList.pillName}}</td>
+          <td>{{ dosageList.quantity}}</td>
           <td>{{ dosageList.dateTake}}</td>
         </tr>
       </tbody>
