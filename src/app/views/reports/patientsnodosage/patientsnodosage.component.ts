@@ -37,15 +37,14 @@ export class PatientsnodosageComponent implements OnInit {
                 dosageDate.setMinutes(dosageDate.getMinutes() + 5);
                 dosageDate = new Date(dosageDate);
                 if (dosageDate <= date && dosageList.state == true) {
-                  console.log(dosageList.medicalTreatment.patient.name + '   ' + dosageList.medicalTreatment.description + '   ' + dosageList.prescription + '    ' + dosageList.dateTake
-                  );
+                  console.log(dosageList.medicalTreatment.patient.name + '   ' + dosageList.medicalTreatment.description + '   ' + dosageList.prescription + '    ' + dosageList.dateTake);
                   this.containerInformation.push({
                     name : dosageList.medicalTreatment.patient.name,
-                  description : dosageList.medicalTreatment.description,
-                  prescription : dosageList.prescription,
-                  pillName: dosageList.pill.name,
-                  quantity : dosageList.quantity,
-                  dateTake : dosageList.dateTake
+                    description : dosageList.medicalTreatment.description,
+                    prescription : dosageList.prescription,
+                    pillName: dosageList.pill.name,
+                    quantity : dosageList.quantity,
+                    dateTake : dosageList.dateTake
                   });
                 }
               }
