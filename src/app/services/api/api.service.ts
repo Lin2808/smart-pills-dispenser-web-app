@@ -20,7 +20,7 @@ import { NewDosageI } from 'src/app/models/newdosage.interface';
   providedIn: 'root'
 })
 export class ApiService {
-  url:string = "https://smart-pills-dispenser.herokuapp.com/api/";
+  url:string = "https://springgcp-395720.uc.r.appspot.com/api/";
 
   constructor(private httpClient:HttpClient)
   {
